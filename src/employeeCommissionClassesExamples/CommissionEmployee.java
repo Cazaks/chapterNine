@@ -7,7 +7,7 @@ public class CommissionEmployee extends Object{
     private double grossSales;
     private double commissionRate;
 
-    public CommissionEmployee(String firstName, String lastName, String socialSecurityNumber) {
+    public CommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales,  double commissionRate) {
 
         if(grossSales < 0.0){
             throw new IllegalArgumentException("GrossSales must be >= 0.0");
