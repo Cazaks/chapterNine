@@ -2,7 +2,7 @@ package baseCommissionEployeeClass;
 
 public class BasePlusCommissionEmployee {
 
-    private final String firstName;
+    private String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
     private double grossSales;
@@ -30,6 +30,13 @@ public class BasePlusCommissionEmployee {
         this.grossSales = grossSales;
         this.commissionRate = commissionRate;
         this.baseSalary = baseSalary;
+    }
+
+    public void setFirstName(String firstName) {
+        if(firstName == null || firstName.isEmpty()){
+            throw new IllegalArgumentException("First name must not be empty.");
+        }
+        this.firstName = firstName;
     }
 
     public String getFirstName() {
