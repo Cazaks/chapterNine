@@ -25,15 +25,13 @@ public class BaseCommissionEmployeeExtended extends CommissionEmployeeExtend{
 
     @Override
     public double calculateEarnings() {
-        return baseSalary + (getCommissionRate() * getGrossSales());
+        return getBaseSalary() + super.calculateEarnings();
     }
 
     @Override
     public String toString() {
-        return String.format("%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f%n%s: %.2f",
-                "Base-salary commission employee", getFirstName(), getLastName(),
-                "Social Security Number", getSocialSecurityNumber(),
-                "Gross Sales", getGrossSales(), "Commission Rate", getCommissionRate(),
-                "Base salary", baseSalary);
+        return String.format("%s %s%n%s: %.2f", "base-salaried",
+                super.toString(), "base salary", getBaseSalary());
     }
+
 }

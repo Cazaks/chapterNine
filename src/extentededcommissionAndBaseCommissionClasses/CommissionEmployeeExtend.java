@@ -60,15 +60,19 @@ public class CommissionEmployeeExtend {
     }
 
     protected double calculateEarnings(){
-        return commissionRate * grossSales;
+        return getCommissionRate() * getGrossSales();
     }
 
-    public String toString(){
-        return String.format("%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f",
-                "Commission employee", firstName, lastName,
-                "Social Security Number", socialSecurityNumber,
-                "Gross Sales", grossSales,
-                "Commission Rate", commissionRate);
+    @Override
+    public String toString() {
+        return String.format(
+                "%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f",
+                "Base-salaried commission employee", getFirstName(), getLastName(),
+                "Social Security Number", getSocialSecurityNumber(),
+                "Gross Sales", getGrossSales(),
+                "Commission Rate", getCommissionRate()
+        );
     }
+
 
 }
